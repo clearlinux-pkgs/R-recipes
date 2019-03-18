@@ -4,35 +4,35 @@
 #
 Name     : R-recipes
 Version  : 0.1.4
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/recipes_0.1.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/recipes_0.1.4.tar.gz
 Summary  : Preprocessing Tools to Create Design Matrices
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-NMF
-Requires: R-RcppRoll
-Requires: R-ddalpha
-Requires: R-dplyr
-Requires: R-generics
-Requires: R-gower
-Requires: R-ipred
-Requires: R-lubridate
-Requires: R-rsample
-Requires: R-tidyr
-Requires: R-timeDate
-Requires: R-withr
+Requires: R-mime
+Requires: R-plyr
+Requires: R-utf8
+BuildRequires : R-DRR
 BuildRequires : R-NMF
 BuildRequires : R-RcppRoll
+BuildRequires : R-broom
 BuildRequires : R-ddalpha
+BuildRequires : R-dimRed
 BuildRequires : R-dplyr
+BuildRequires : R-fastICA
 BuildRequires : R-generics
 BuildRequires : R-gower
 BuildRequires : R-ipred
 BuildRequires : R-lubridate
+BuildRequires : R-mime
+BuildRequires : R-pls
+BuildRequires : R-plyr
+BuildRequires : R-psych
 BuildRequires : R-rsample
 BuildRequires : R-tidyr
 BuildRequires : R-timeDate
+BuildRequires : R-utf8
 BuildRequires : R-withr
 BuildRequires : buildreq-R
 
@@ -51,10 +51,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1542922872
+export SOURCE_DATE_EPOCH=1552869230
 
 %install
-export SOURCE_DATE_EPOCH=1542922872
+export SOURCE_DATE_EPOCH=1552869230
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -90,8 +90,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library recipes|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  recipes || :
 
 
 %files
@@ -140,3 +139,88 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/recipes/help/recipes.rdx
 /usr/lib64/R/library/recipes/html/00Index.html
 /usr/lib64/R/library/recipes/html/R.css
+/usr/lib64/R/library/recipes/tests/testthat.R
+/usr/lib64/R/library/recipes/tests/testthat/test-basics.R
+/usr/lib64/R/library/recipes/tests/testthat/test_BoxCox.R
+/usr/lib64/R/library/recipes/tests/testthat/test_YeoJohnson.R
+/usr/lib64/R/library/recipes/tests/testthat/test_arrange.R
+/usr/lib64/R/library/recipes/tests/testthat/test_bagimpute.R
+/usr/lib64/R/library/recipes/tests/testthat/test_bin2factor.R
+/usr/lib64/R/library/recipes/tests/testthat/test_bs.R
+/usr/lib64/R/library/recipes/tests/testthat/test_center_scale.R
+/usr/lib64/R/library/recipes/tests/testthat/test_classdist.R
+/usr/lib64/R/library/recipes/tests/testthat/test_colcheck.R
+/usr/lib64/R/library/recipes/tests/testthat/test_corr.R
+/usr/lib64/R/library/recipes/tests/testthat/test_count.R
+/usr/lib64/R/library/recipes/tests/testthat/test_data.frame.R
+/usr/lib64/R/library/recipes/tests/testthat/test_date.R
+/usr/lib64/R/library/recipes/tests/testthat/test_depth.R
+/usr/lib64/R/library/recipes/tests/testthat/test_discretized.R
+/usr/lib64/R/library/recipes/tests/testthat/test_downsample.R
+/usr/lib64/R/library/recipes/tests/testthat/test_dummies.R
+/usr/lib64/R/library/recipes/tests/testthat/test_factors2strings.R
+/usr/lib64/R/library/recipes/tests/testthat/test_filter.R
+/usr/lib64/R/library/recipes/tests/testthat/test_formula.R
+/usr/lib64/R/library/recipes/tests/testthat/test_geodist.R
+/usr/lib64/R/library/recipes/tests/testthat/test_grouped_df.R
+/usr/lib64/R/library/recipes/tests/testthat/test_holiday.R
+/usr/lib64/R/library/recipes/tests/testthat/test_hyperbolic.R
+/usr/lib64/R/library/recipes/tests/testthat/test_ica.R
+/usr/lib64/R/library/recipes/tests/testthat/test_integer.R
+/usr/lib64/R/library/recipes/tests/testthat/test_interact.R
+/usr/lib64/R/library/recipes/tests/testthat/test_intercept.R
+/usr/lib64/R/library/recipes/tests/testthat/test_inverse.R
+/usr/lib64/R/library/recipes/tests/testthat/test_invlogit.R
+/usr/lib64/R/library/recipes/tests/testthat/test_isomap.R
+/usr/lib64/R/library/recipes/tests/testthat/test_knnimpute.R
+/usr/lib64/R/library/recipes/tests/testthat/test_kpca.R
+/usr/lib64/R/library/recipes/tests/testthat/test_lag.R
+/usr/lib64/R/library/recipes/tests/testthat/test_lincomb.R
+/usr/lib64/R/library/recipes/tests/testthat/test_list_cols.R
+/usr/lib64/R/library/recipes/tests/testthat/test_log.R
+/usr/lib64/R/library/recipes/tests/testthat/test_logit.R
+/usr/lib64/R/library/recipes/tests/testthat/test_lowerimpute.R
+/usr/lib64/R/library/recipes/tests/testthat/test_matrix.R
+/usr/lib64/R/library/recipes/tests/testthat/test_meanimpute.R
+/usr/lib64/R/library/recipes/tests/testthat/test_medianimpute.R
+/usr/lib64/R/library/recipes/tests/testthat/test_missing.R
+/usr/lib64/R/library/recipes/tests/testthat/test_modeimpute.R
+/usr/lib64/R/library/recipes/tests/testthat/test_multivariate.R
+/usr/lib64/R/library/recipes/tests/testthat/test_mutate.R
+/usr/lib64/R/library/recipes/tests/testthat/test_naomit.R
+/usr/lib64/R/library/recipes/tests/testthat/test_nnmf.R
+/usr/lib64/R/library/recipes/tests/testthat/test_nomial_types.R
+/usr/lib64/R/library/recipes/tests/testthat/test_novel.R
+/usr/lib64/R/library/recipes/tests/testthat/test_ns.R
+/usr/lib64/R/library/recipes/tests/testthat/test_num2factor.R
+/usr/lib64/R/library/recipes/tests/testthat/test_nzv.R
+/usr/lib64/R/library/recipes/tests/testthat/test_ordinalscore.R
+/usr/lib64/R/library/recipes/tests/testthat/test_other.R
+/usr/lib64/R/library/recipes/tests/testthat/test_pca.R
+/usr/lib64/R/library/recipes/tests/testthat/test_pls.R
+/usr/lib64/R/library/recipes/tests/testthat/test_poly.R
+/usr/lib64/R/library/recipes/tests/testthat/test_profile.R
+/usr/lib64/R/library/recipes/tests/testthat/test_range.R
+/usr/lib64/R/library/recipes/tests/testthat/test_range_check.R
+/usr/lib64/R/library/recipes/tests/testthat/test_ratio.R
+/usr/lib64/R/library/recipes/tests/testthat/test_regex.R
+/usr/lib64/R/library/recipes/tests/testthat/test_relu.R
+/usr/lib64/R/library/recipes/tests/testthat/test_retraining.R
+/usr/lib64/R/library/recipes/tests/testthat/test_rm.R
+/usr/lib64/R/library/recipes/tests/testthat/test_roles.R
+/usr/lib64/R/library/recipes/tests/testthat/test_roll.R
+/usr/lib64/R/library/recipes/tests/testthat/test_rollimpute.R
+/usr/lib64/R/library/recipes/tests/testthat/test_sample.R
+/usr/lib64/R/library/recipes/tests/testthat/test_select_terms.R
+/usr/lib64/R/library/recipes/tests/testthat/test_shuffle.R
+/usr/lib64/R/library/recipes/tests/testthat/test_skipping.R
+/usr/lib64/R/library/recipes/tests/testthat/test_slice.R
+/usr/lib64/R/library/recipes/tests/testthat/test_sparsity.R
+/usr/lib64/R/library/recipes/tests/testthat/test_spatialsign.R
+/usr/lib64/R/library/recipes/tests/testthat/test_sqrt.R
+/usr/lib64/R/library/recipes/tests/testthat/test_string2factor.R
+/usr/lib64/R/library/recipes/tests/testthat/test_stringsAsFactors.R
+/usr/lib64/R/library/recipes/tests/testthat/test_tidy.R
+/usr/lib64/R/library/recipes/tests/testthat/test_unorder.R
+/usr/lib64/R/library/recipes/tests/testthat/test_upsample.R
+/usr/lib64/R/library/recipes/tests/testthat/test_zv.R

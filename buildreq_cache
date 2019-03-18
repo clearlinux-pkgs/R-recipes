@@ -11,9 +11,12 @@ R-generics
 R-gower
 R-ipred
 R-lubridate
+R-mime
 R-pls
+R-plyr
 R-psych
 R-rsample
 R-tidyr
 R-timeDate
+R-utf8
 R-withr
