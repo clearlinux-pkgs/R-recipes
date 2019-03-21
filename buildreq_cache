@@ -1,6 +1,7 @@
-0.1.4
+0.1.5
 R-DRR
 R-NMF
+R-Rcpp
 R-RcppRoll
 R-broom
 R-ddalpha
@@ -10,13 +11,18 @@ R-fastICA
 R-generics
 R-gower
 R-ipred
+R-kernlab
+R-lava
 R-lubridate
 R-mime
+R-pillar
 R-pls
 R-plyr
+R-prodlim
 R-psych
 R-rsample
 R-tidyr
+R-tidyselect
 R-timeDate
 R-utf8
 R-withr
