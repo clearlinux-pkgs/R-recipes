@@ -4,7 +4,7 @@
 #
 Name     : R-recipes
 Version  : 0.1.5
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/recipes_0.1.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/recipes_0.1.5.tar.gz
 Summary  : Preprocessing Tools to Create Design Matrices
