@@ -4,28 +4,22 @@
 #
 Name     : R-recipes
 Version  : 0.1.6
-Release  : 23
+Release  : 24
 URL      : https://cran.r-project.org/src/contrib/recipes_0.1.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/recipes_0.1.6.tar.gz
 Summary  : Preprocessing Tools to Create Design Matrices
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-ddalpha
-Requires: R-dimRed
 Requires: R-dplyr
-Requires: R-fastICA
 Requires: R-generics
-Requires: R-ggplot2
 Requires: R-glue
 Requires: R-gower
 Requires: R-ipred
 Requires: R-lubridate
 Requires: R-magrittr
-Requires: R-munsell
-Requires: R-pls
 Requires: R-purrr
 Requires: R-rlang
-Requires: R-rsample
+Requires: R-stringi
 Requires: R-tibble
 Requires: R-tidyr
 Requires: R-tidyselect
@@ -47,6 +41,7 @@ BuildRequires : R-pls
 BuildRequires : R-purrr
 BuildRequires : R-rlang
 BuildRequires : R-rsample
+BuildRequires : R-stringi
 BuildRequires : R-tibble
 BuildRequires : R-tidyr
 BuildRequires : R-tidyselect
@@ -69,10 +64,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562110561
+export SOURCE_DATE_EPOCH=1562447286
 
 %install
-export SOURCE_DATE_EPOCH=1562110561
+export SOURCE_DATE_EPOCH=1562447286
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
