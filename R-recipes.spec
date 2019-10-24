@@ -4,26 +4,21 @@
 #
 Name     : R-recipes
 Version  : 0.1.7
-Release  : 25
+Release  : 26
 URL      : https://cran.r-project.org/src/contrib/recipes_0.1.7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/recipes_0.1.7.tar.gz
 Summary  : Preprocessing Tools to Create Design Matrices
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-ddalpha
-Requires: R-dimRed
 Requires: R-dplyr
-Requires: R-fastICA
 Requires: R-generics
 Requires: R-glue
 Requires: R-gower
 Requires: R-ipred
 Requires: R-lubridate
 Requires: R-magrittr
-Requires: R-pls
 Requires: R-purrr
 Requires: R-rlang
-Requires: R-rsample
 Requires: R-tibble
 Requires: R-tidyr
 Requires: R-tidyselect
@@ -34,21 +29,25 @@ BuildRequires : R-dimRed
 BuildRequires : R-dplyr
 BuildRequires : R-fastICA
 BuildRequires : R-generics
+BuildRequires : R-ggplot2
 BuildRequires : R-glue
 BuildRequires : R-gower
 BuildRequires : R-ipred
 BuildRequires : R-lubridate
 BuildRequires : R-magrittr
+BuildRequires : R-munsell
 BuildRequires : R-pls
 BuildRequires : R-purrr
 BuildRequires : R-rlang
 BuildRequires : R-rsample
+BuildRequires : R-stringi
 BuildRequires : R-tibble
 BuildRequires : R-tidyr
 BuildRequires : R-tidyselect
 BuildRequires : R-timeDate
 BuildRequires : R-withr
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 design matrices. Recipes consist of one or more data manipulation 
@@ -65,10 +64,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568912034
+export SOURCE_DATE_EPOCH=1571887355
 
 %install
-export SOURCE_DATE_EPOCH=1568912034
+export SOURCE_DATE_EPOCH=1571887355
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
