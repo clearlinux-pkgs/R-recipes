@@ -1,3 +1,10 @@
 # This file contains build requirements that get picked up but are
 # undesirable. One entry per line, no whitespace.
 R-caret
+R-ddalpha
+R-dimRed
+R-fastICA
+R-kernlab
+R-modeldata
+R-pls
+R-rsample
