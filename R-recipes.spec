@@ -4,7 +4,7 @@
 #
 Name     : R-recipes
 Version  : 0.1.12
-Release  : 34
+Release  : 35
 URL      : https://cran.r-project.org/src/contrib/recipes_0.1.12.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/recipes_0.1.12.tar.gz
 Summary  : Preprocessing Tools to Create Design Matrices
@@ -56,10 +56,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1588629698
+export SOURCE_DATE_EPOCH=1589777010
 
 %install
-export SOURCE_DATE_EPOCH=1588629698
+export SOURCE_DATE_EPOCH=1589777010
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
