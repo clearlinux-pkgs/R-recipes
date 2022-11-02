@@ -4,7 +4,7 @@
 #
 Name     : R-recipes
 Version  : 1.0.2
-Release  : 61
+Release  : 62
 URL      : https://cran.r-project.org/src/contrib/recipes_1.0.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/recipes_1.0.2.tar.gz
 Summary  : Preprocessing and Feature Engineering Steps for Modeling
