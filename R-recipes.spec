@@ -4,7 +4,7 @@
 #
 Name     : R-recipes
 Version  : 1.0.5
-Release  : 65
+Release  : 66
 URL      : https://cran.r-project.org/src/contrib/recipes_1.0.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/recipes_1.0.5.tar.gz
 Summary  : Preprocessing and Feature Engineering Steps for Modeling
@@ -51,9 +51,6 @@ BuildRequires : R-timeDate
 BuildRequires : R-vctrs
 BuildRequires : R-withr
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 extensible framework for pipeable sequences of feature engineering
@@ -71,10 +68,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1677000784
+export SOURCE_DATE_EPOCH=1678837511
 
 %install
-export SOURCE_DATE_EPOCH=1677000784
+export SOURCE_DATE_EPOCH=1678837511
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
