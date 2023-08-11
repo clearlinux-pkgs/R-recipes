@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-recipes
-Version  : 1.0.6
-Release  : 70
-URL      : https://cran.r-project.org/src/contrib/recipes_1.0.6.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/recipes_1.0.6.tar.gz
+Version  : 1.0.7
+Release  : 71
+URL      : https://cran.r-project.org/src/contrib/recipes_1.0.7.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/recipes_1.0.7.tar.gz
 Summary  : Preprocessing and Feature Engineering Steps for Modeling
 Group    : Development/Tools
 License  : MIT
@@ -62,16 +62,19 @@ extensible framework for pipeable sequences of feature engineering
 
 %prep
 %setup -q -n recipes
+pushd ..
+cp -a recipes buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682437687
+export SOURCE_DATE_EPOCH=1691770962
 
 %install
-export SOURCE_DATE_EPOCH=1682437687
+export SOURCE_DATE_EPOCH=1691770962
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -109,6 +112,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc . || :
 
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -170,6 +174,8 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/R4.2/discretize.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/R4.2/selections.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/R4.2/tidy.md
+/usr/lib64/R/library/recipes/tests/testthat/_snaps/R4.3/discretize.md
+/usr/lib64/R/library/recipes/tests/testthat/_snaps/R4.3/selections.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/YeoJohnson.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/arrange.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/basics.md
@@ -178,7 +184,9 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/case-weight-functions.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/center.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/class.md
+/usr/lib64/R/library/recipes/tests/testthat/_snaps/classdist-shrunken.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/classdist.md
+/usr/lib64/R/library/recipes/tests/testthat/_snaps/classdist_shrunken.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/colcheck.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/corr.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/count.md
@@ -191,7 +199,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/dummy_multi_choice.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/extension_check.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/extract-dials.md
-/usr/lib64/R/library/recipes/tests/testthat/_snaps/factors2string.md
+/usr/lib64/R/library/recipes/tests/testthat/_snaps/factor2string.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/filter.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/filter_missing.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/format.md
@@ -227,6 +235,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/misc.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/missing.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/mutate.md
+/usr/lib64/R/library/recipes/tests/testthat/_snaps/mutate_at.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/naomit.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/newvalues.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/nnmf_sparse.md
@@ -253,6 +262,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/relevel.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/relu.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/rename.md
+/usr/lib64/R/library/recipes/tests/testthat/_snaps/rename_at.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/rm.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/roles.md
 /usr/lib64/R/library/recipes/tests/testthat/_snaps/sample.md
@@ -296,6 +306,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/recipes/tests/testthat/test-center.R
 /usr/lib64/R/library/recipes/tests/testthat/test-class.R
 /usr/lib64/R/library/recipes/tests/testthat/test-classdist.R
+/usr/lib64/R/library/recipes/tests/testthat/test-classdist_shrunken.R
 /usr/lib64/R/library/recipes/tests/testthat/test-colcheck.R
 /usr/lib64/R/library/recipes/tests/testthat/test-column_order.R
 /usr/lib64/R/library/recipes/tests/testthat/test-corr.R
@@ -310,7 +321,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/recipes/tests/testthat/test-dummy_multi_choice.R
 /usr/lib64/R/library/recipes/tests/testthat/test-extension_check.R
 /usr/lib64/R/library/recipes/tests/testthat/test-extract-dials.R
-/usr/lib64/R/library/recipes/tests/testthat/test-factors2string.R
+/usr/lib64/R/library/recipes/tests/testthat/test-factor2string.R
 /usr/lib64/R/library/recipes/tests/testthat/test-filter.R
 /usr/lib64/R/library/recipes/tests/testthat/test-filter_missing.R
 /usr/lib64/R/library/recipes/tests/testthat/test-format.R
@@ -349,6 +360,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/recipes/tests/testthat/test-missing.R
 /usr/lib64/R/library/recipes/tests/testthat/test-multivariate.R
 /usr/lib64/R/library/recipes/tests/testthat/test-mutate.R
+/usr/lib64/R/library/recipes/tests/testthat/test-mutate_at.R
 /usr/lib64/R/library/recipes/tests/testthat/test-naomit.R
 /usr/lib64/R/library/recipes/tests/testthat/test-newvalues.R
 /usr/lib64/R/library/recipes/tests/testthat/test-nnmf_sparse.R
@@ -376,6 +388,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/recipes/tests/testthat/test-relevel.R
 /usr/lib64/R/library/recipes/tests/testthat/test-relu.R
 /usr/lib64/R/library/recipes/tests/testthat/test-rename.R
+/usr/lib64/R/library/recipes/tests/testthat/test-rename_at.R
 /usr/lib64/R/library/recipes/tests/testthat/test-retraining.R
 /usr/lib64/R/library/recipes/tests/testthat/test-rm.R
 /usr/lib64/R/library/recipes/tests/testthat/test-roles.R
