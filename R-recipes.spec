@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-recipes
-Version  : 1.0.7
-Release  : 71
-URL      : https://cran.r-project.org/src/contrib/recipes_1.0.7.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/recipes_1.0.7.tar.gz
+Version  : 1.0.8
+Release  : 72
+URL      : https://cran.r-project.org/src/contrib/recipes_1.0.8.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/recipes_1.0.8.tar.gz
 Summary  : Preprocessing and Feature Engineering Steps for Modeling
 Group    : Development/Tools
 License  : MIT
@@ -71,10 +71,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1691770962
+export SOURCE_DATE_EPOCH=1693256137
 
 %install
-export SOURCE_DATE_EPOCH=1691770962
+export SOURCE_DATE_EPOCH=1693256137
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
