@@ -6,10 +6,10 @@
 # autospec commit: fbbd4e3
 #
 Name     : R-recipes
-Version  : 1.1.1
-Release  : 79
-URL      : https://ftp.osuosl.org/pub/cran/src/contrib/recipes_1.1.1.tar.gz
-Source0  : https://ftp.osuosl.org/pub/cran/src/contrib/recipes_1.1.1.tar.gz
+Version  : 1.2.0
+Release  : 80
+URL      : https://ftp.osuosl.org/pub/cran/src/contrib/recipes_1.2.0.tar.gz
+Source0  : https://ftp.osuosl.org/pub/cran/src/contrib/recipes_1.2.0.tar.gz
 Summary  : Preprocessing and Feature Engineering Steps for Modeling
 Group    : Development/Tools
 License  : MIT
@@ -79,10 +79,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1740098398
+export SOURCE_DATE_EPOCH=1742435094
 
 %install
-export SOURCE_DATE_EPOCH=1740098398
+export SOURCE_DATE_EPOCH=1742435094
 rm -rf %{buildroot}
 LANG=C.UTF-8
 CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -O3 -flto -fno-semantic-interposition "
